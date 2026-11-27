@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stash — Privacy Policy</title>
+<meta name="description" content="Privacy Policy for Stash: Save &amp; Sort — what the app stores, what it sends, and your choices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F0E8;
+    --surface:#FFFFFF;
+    --ink:#1F2A2A;
+    --ink-soft:#47524F;
+    --muted:#6E665C;
+    --accent:#2F6566;
+    --accent-deep:#234D4E;
+    --line:#E2DBCD;
+    --fill:#EAF1EF;
+    --maxw:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:54px 24px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:4px;
+    background:linear-gradient(90deg,#E3B873 0%,#B5543A 100%);
+  }
+  .header-inner{ max-width:var(--maxw); margin:0 auto; }
+  header .wordmark{ color:#F7F0E1; }
+  .wordmark{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:34px;
+    letter-spacing:-0.01em;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin:0;
+  }
+  .dot{
+    width:13px; height:13px; border-radius:50%;
+    background:#E3B873;
+    display:inline-block;
+    flex:none;
+  }
+  .header-inner h1{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:400;
+    font-size:clamp(28px,6vw,40px);
+    line-height:1.15;
+    letter-spacing:-0.02em;
+    margin:26px 0 10px;
+  }
+  .updated{
+    color:rgba(255,255,255,0.62);
+    font-size:14px;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+
+  /* ---------- Layout ---------- */
+  main{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 30px;
+    margin-top:-28px;
+    position:relative;
+    box-shadow:0 8px 30px rgba(31,42,42,0.06);
+  }
+
+  .intro{ color:var(--ink-soft); margin:0; }
+  .intro strong{ color:var(--ink); }
+
+  /* ---------- Table of contents ---------- */
+  nav.toc{
+    margin-top:38px;
+    padding:22px 26px;
+    background:var(--fill);
+    border:1px solid #D3E3E0;
+    border-radius:14px;
+  }
+  nav.toc h2{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:12px;
+    font-weight:600;
+    color:var(--accent-deep);
+    margin:0 0 14px;
+  }
+  nav.toc ol{
+    margin:0; padding:0;
+    list-style:none;
+    counter-reset:toc;
+    columns:2;
+    column-gap:30px;
+  }
+  nav.toc li{
+    counter-increment:toc;
+    margin:0 0 8px;
+    break-inside:avoid;
+  }
+  nav.toc a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:15px;
+    display:flex;
+    gap:9px;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+    font-weight:600;
+    flex:none;
+  }
+  nav.toc a:hover{ color:var(--accent-deep); }
+
+  /* ---------- Sections ---------- */
+  section{
+    margin-top:46px;
+    scroll-margin-top:24px;
+  }
+  section h2{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:-0.01em;
+    margin:0 0 4px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  section h2 .num{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  section h3{
+    font-size:17px;
+    font-weight:600;
+    margin:26px 0 6px;
+    color:var(--ink);
+  }
+  p{ margin:14px 0; color:var(--ink-soft); }
+  ul{ margin:14px 0; padding-left:4px; list-style:none; }
+  ul li{
+    position:relative;
+    padding-left:22px;
+    margin:9px 0;
+    color:var(--ink-soft);
+  }
+  ul li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:11px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  strong{ color:var(--ink); font-weight:600; }
+  a{ color:var(--accent-deep); }
+
+  /* placeholders to fill in */
+  .fill{
+    background:var(--fill);
+    border-bottom:2px solid var(--accent);
+    padding:0 4px;
+    border-radius:3px;
+    font-weight:500;
+    color:var(--accent-deep);
+    white-space:nowrap;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--surface);
+    padding:40px 24px;
+    text-align:center;
+  }
+  .footer-inner{ max-width:var(--maxw); margin:0 auto; }
+  footer .wordmark-sm{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  footer .dot{ width:9px; height:9px; }
+  footer p{ font-size:14px; color:var(--muted); margin:14px 0 0; }
+  footer .links{ margin-top:6px; }
+  footer .links a{ color:var(--accent-deep); text-decoration:none; font-size:14px; }
+  footer .links a:hover{ text-decoration:underline; }
+
+  @media (max-width:560px){
+    body{ font-size:16px; }
+    .card{ padding:24px 20px; }
+    nav.toc ol{ columns:1; }
+    header{ padding:42px 22px 40px; }
+  }
+
+  @media print{
+    header{ background:#fff; color:#000; }
+    .updated{ color:#555; }
+    header::after{ display:none; }
+    .card{ box-shadow:none; border:none; margin-top:24px; }
+    nav.toc{ display:none; }
+    a{ color:#000; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="wordmark"><span class="dot"></span>Stash</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Effective November 20, 2026</p>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p class="intro">Stash helps you save links to posts and web pages and keep them organized. This policy explains what information Stash handles, why, and the choices you have. In short: <strong>Stash doesn&rsquo;t sell your data, doesn&rsquo;t show ads, and doesn&rsquo;t track you across other apps or websites.</strong></p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#device">Information Stored on Your Device</a></li>
+      <li><a href="#sorting">Auto-Sorting (Optional, Requires Sign-In)</a></li>
+      <li><a href="#account">Account Information</a></li>
+      <li><a href="#purchases">Subscriptions &amp; Purchases</a></li>
+      <li><a href="#dont">What We Don&rsquo;t Do</a></li>
+      <li><a href="#providers">Service Providers</a></li>
+      <li><a href="#retention">Data Retention &amp; Deletion</a></li>
+      <li><a href="#children">Children&rsquo;s Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <section id="device">
+    <h2><span class="num">01</span> Information Stored on Your Device</h2>
+    <p>When you share a post or link to Stash, the app stores the following <strong>on your iPhone</strong>:</p>
+    <ul>
+      <li>The link (URL).</li>
+      <li>Any text shared along with it, such as a caption.</li>
+      <li>A title and preview image for the link.</li>
+      <li>The categories you create.</li>
+    </ul>
+    <p>Stash fetches the title and preview image directly from the linked website. This data stays on your device unless you turn on auto-sorting (see Section 02). Deleting a save, or deleting the app, removes this data from your device.</p>
+  </section>
+
+  <section id="sorting">
+    <h2><span class="num">02</span> Auto-Sorting (Optional, Requires Sign-In)</h2>
+    <p>If you choose to sign in, Stash can sort new saves into your categories automatically and write a short description of each one. To do this, Stash sends the following to our server:</p>
+    <ul>
+      <li>The saved link and any shared caption.</li>
+      <li>The names of your categories.</li>
+    </ul>
+    <p>Our server is hosted by <strong>Supabase</strong>. It fetches publicly available information about the link, such as its title, description and preview image, and sends the text to <strong>Anthropic&rsquo;s Claude API</strong>, which chooses a category and writes the description. Anthropic processes this content to provide the service; under its commercial terms it doesn&rsquo;t use it to train its models. If a save is a recipe, the server also copies its ingredients and steps, either from the caption or from the recipe web page the caption links to, so you can read the recipe in Stash. We store the save and its result on our server so your saves can be processed. We also keep a usage log (token counts and cost) so we can run the service.</p>
+    <p>With each save, the app also sends Apple&rsquo;s signed record of how it was installed, which tells our server whether it&rsquo;s a TestFlight beta (betas have no free-save limit). It doesn&rsquo;t include your name, email or Apple ID.</p>
+    <p>If you never sign in, nothing in this section applies, and your saves never leave your device.</p>
+  </section>
+
+  <section id="account">
+    <h2><span class="num">03</span> Account Information</h2>
+    <p>Stash uses <strong>Sign in with Apple</strong>. Stash does not ask Apple for your name or email address. We receive only an anonymous user identifier, which links your saves and your subscription to your account.</p>
+  </section>
+
+  <section id="purchases">
+    <h2><span class="num">04</span> Subscriptions &amp; Purchases</h2>
+    <p>Purchases are processed by <strong>Apple</strong>; we never see your payment details. We use <strong>RevenueCat</strong> to manage subscription status. RevenueCat receives your anonymous user identifier, your purchase history and basic device information, so it can confirm whether you have an active subscription and give us aggregated sales statistics.</p>
+  </section>
+
+  <section id="dont">
+    <h2><span class="num">05</span> What We Don&rsquo;t Do</h2>
+    <ul>
+      <li>We don&rsquo;t sell or rent your information.</li>
+      <li>We don&rsquo;t use your information for advertising, and the app contains no ads.</li>
+      <li>We don&rsquo;t track you across other companies&rsquo; apps or websites.</li>
+      <li>We don&rsquo;t access your contacts, photos, location or microphone.</li>
+    </ul>
+  </section>
+
+  <section id="providers">
+    <h2><span class="num">06</span> Service Providers</h2>
+    <p>We share information only with the providers that run parts of Stash, and only as described above:</p>
+    <ul>
+      <li><strong>Supabase</strong> &mdash; server hosting, database and sign-in.</li>
+      <li><strong>Anthropic (Claude API)</strong> &mdash; sorting saves, writing descriptions and reading recipes.</li>
+      <li><strong>RevenueCat</strong> &mdash; subscription status and purchase analytics.</li>
+      <li><strong>Apple</strong> &mdash; Sign in with Apple, payments, and TestFlight crash reports you choose to send.</li>
+    </ul>
+    <p>We may also disclose information if the law requires it.</p>
+  </section>
+
+  <section id="retention">
+    <h2><span class="num">07</span> Data Retention &amp; Deletion</h2>
+    <ul>
+      <li>Data on your device is kept until you delete it or delete the app.</li>
+      <li>Data on our server is kept while your account is active.</li>
+      <li>To delete your account and all server-side data, open <strong>Settings &rsaquo; Account &rsaquo; Delete Account</strong> in the app. Deletion is immediate and permanent, and Stash also revokes its Sign in with Apple access. Saves stored on your iPhone stay until you delete them or the app.</li>
+      <li>Deleting your account doesn&rsquo;t cancel a Stash Pro subscription; manage that in your iPhone&rsquo;s Settings &rsaquo; your name &rsaquo; Subscriptions.</li>
+      <li>You can also email <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a> to ask for deletion; we&rsquo;ll complete it within 30 days.</li>
+    </ul>
+  </section>
+
+  <section id="children">
+    <h2><span class="num">08</span> Children&rsquo;s Privacy</h2>
+    <p>Stash is not directed to children under 13, and we don&rsquo;t knowingly collect information from them. If you believe a child has given us personal information, contact us so we can remove it.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">09</span> Changes to This Policy</h2>
+    <p>If we change this policy, we&rsquo;ll update the effective date above. Significant changes will also be announced in the app.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">10</span> Contact Us</h2>
+    <p>Questions or requests about your privacy:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a></li>
+      <li><strong>Developer:</strong> Russell Bergman</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="wordmark-sm"><span class="dot"></span>Stash</span>
+    <p>&copy; 2026 Russell Bergman. All rights reserved.</p>
+    <p class="links"><a href="./support.html">Support</a> &middot; <a href="./terms.html">Terms of Use</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

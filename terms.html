@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stash — Terms of Use</title>
+<meta name="description" content="Terms of Use for Stash: Save &amp; Sort.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F0E8;
+    --surface:#FFFFFF;
+    --ink:#1F2A2A;
+    --ink-soft:#47524F;
+    --muted:#6E665C;
+    --accent:#2F6566;
+    --accent-deep:#234D4E;
+    --line:#E2DBCD;
+    --fill:#EAF1EF;
+    --maxw:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:54px 24px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:4px;
+    background:linear-gradient(90deg,#E3B873 0%,#B5543A 100%);
+  }
+  .header-inner{ max-width:var(--maxw); margin:0 auto; }
+  header .wordmark{ color:#F7F0E1; }
+  .wordmark{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:34px;
+    letter-spacing:-0.01em;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin:0;
+  }
+  .dot{
+    width:13px; height:13px; border-radius:50%;
+    background:#E3B873;
+    display:inline-block;
+    flex:none;
+  }
+  .header-inner h1{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:400;
+    font-size:clamp(28px,6vw,40px);
+    line-height:1.15;
+    letter-spacing:-0.02em;
+    margin:26px 0 10px;
+  }
+  .updated{
+    color:rgba(255,255,255,0.62);
+    font-size:14px;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+
+  /* ---------- Layout ---------- */
+  main{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 30px;
+    margin-top:-28px;
+    position:relative;
+    box-shadow:0 8px 30px rgba(31,42,42,0.06);
+  }
+
+  .intro{ color:var(--ink-soft); margin:0; }
+  .intro strong{ color:var(--ink); }
+
+  /* ---------- Table of contents ---------- */
+  nav.toc{
+    margin-top:38px;
+    padding:22px 26px;
+    background:var(--fill);
+    border:1px solid #D3E3E0;
+    border-radius:14px;
+  }
+  nav.toc h2{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:12px;
+    font-weight:600;
+    color:var(--accent-deep);
+    margin:0 0 14px;
+  }
+  nav.toc ol{
+    margin:0; padding:0;
+    list-style:none;
+    counter-reset:toc;
+    columns:2;
+    column-gap:30px;
+  }
+  nav.toc li{
+    counter-increment:toc;
+    margin:0 0 8px;
+    break-inside:avoid;
+  }
+  nav.toc a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:15px;
+    display:flex;
+    gap:9px;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+    font-weight:600;
+    flex:none;
+  }
+  nav.toc a:hover{ color:var(--accent-deep); }
+
+  /* ---------- Sections ---------- */
+  section{
+    margin-top:46px;
+    scroll-margin-top:24px;
+  }
+  section h2{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:-0.01em;
+    margin:0 0 4px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  section h2 .num{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  section h3{
+    font-size:17px;
+    font-weight:600;
+    margin:26px 0 6px;
+    color:var(--ink);
+  }
+  p{ margin:14px 0; color:var(--ink-soft); }
+  ul{ margin:14px 0; padding-left:4px; list-style:none; }
+  ul li{
+    position:relative;
+    padding-left:22px;
+    margin:9px 0;
+    color:var(--ink-soft);
+  }
+  ul li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:11px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  strong{ color:var(--ink); font-weight:600; }
+  a{ color:var(--accent-deep); }
+
+  /* placeholders to fill in */
+  .fill{
+    background:var(--fill);
+    border-bottom:2px solid var(--accent);
+    padding:0 4px;
+    border-radius:3px;
+    font-weight:500;
+    color:var(--accent-deep);
+    white-space:nowrap;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--surface);
+    padding:40px 24px;
+    text-align:center;
+  }
+  .footer-inner{ max-width:var(--maxw); margin:0 auto; }
+  footer .wordmark-sm{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  footer .dot{ width:9px; height:9px; }
+  footer p{ font-size:14px; color:var(--muted); margin:14px 0 0; }
+  footer .links{ margin-top:6px; }
+  footer .links a{ color:var(--accent-deep); text-decoration:none; font-size:14px; }
+  footer .links a:hover{ text-decoration:underline; }
+
+  @media (max-width:560px){
+    body{ font-size:16px; }
+    .card{ padding:24px 20px; }
+    nav.toc ol{ columns:1; }
+    header{ padding:42px 22px 40px; }
+  }
+
+  @media print{
+    header{ background:#fff; color:#000; }
+    .updated{ color:#555; }
+    header::after{ display:none; }
+    .card{ box-shadow:none; border:none; margin-top:24px; }
+    nav.toc{ display:none; }
+    a{ color:#000; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="wordmark"><span class="dot"></span>Stash</p>
+    <h1>Terms of Use</h1>
+    <p class="updated">Last updated: November 27, 2026</p>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p class="intro">These Terms of Use (&ldquo;Terms&rdquo;) are an agreement between you and Russell Bergman (&ldquo;we,&rdquo; &ldquo;us&rdquo; or &ldquo;our&rdquo;) and govern your use of the Stash: Save &amp; Sort app and related services (the &ldquo;App&rdquo;). By downloading or using Stash, you agree to these Terms. If you do not agree, do not use the App.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>On this page</h2>
+    <ol>
+      <li><a href="#acceptance">Acceptance of Terms</a></li>
+      <li><a href="#eligibility">Eligibility</a></li>
+      <li><a href="#account">Your Account</a></li>
+      <li><a href="#use">Acceptable Use</a></li>
+      <li><a href="#content">Saved Content &amp; Third-Party Links</a></li>
+      <li><a href="#purchases">Purchases &amp; Subscriptions</a></li>
+      <li><a href="#thirdparty">Third-Party Services</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#disclaimers">Disclaimers</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#termination">Termination</a></li>
+      <li><a href="#changes">Changes to These Terms</a></li>
+      <li><a href="#law">Governing Law</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <section id="acceptance">
+    <h2><span class="num">01</span> Acceptance of Terms</h2>
+    <p>By using Stash in any way, you confirm that you have read, understood and agree to these Terms and to our <a href="./index.html">Privacy Policy</a>. Apple&rsquo;s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard End User License Agreement</a> also applies to your use of the App; where it conflicts with these Terms, the Apple agreement governs.</p>
+  </section>
+
+  <section id="eligibility">
+    <h2><span class="num">02</span> Eligibility</h2>
+    <p>You must be at least 13 years old to use Stash, and old enough to form a binding contract where you live (or have a parent or guardian&rsquo;s permission) to make purchases.</p>
+  </section>
+
+  <section id="account">
+    <h2><span class="num">03</span> Your Account</h2>
+    <p>Signing in is optional and uses Sign in with Apple. You are responsible for activity under your account. You can delete your account at any time in <strong>Settings &rsaquo; Account &rsaquo; Delete Account</strong>. Contact <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a> if you suspect unauthorized use.</p>
+  </section>
+
+  <section id="use">
+    <h2><span class="num">04</span> Acceptable Use</h2>
+    <p>When using Stash, you agree not to:</p>
+    <ul>
+      <li>Use the App for any unlawful, fraudulent or harmful purpose.</li>
+      <li>Interfere with, disrupt, or attempt to gain unauthorized access to the App, its server or its systems.</li>
+      <li>Copy, modify, reverse-engineer or create derivative works of the App.</li>
+      <li>Use automated tools to send requests to our server or to scrape the App.</li>
+    </ul>
+  </section>
+
+  <section id="content">
+    <h2><span class="num">05</span> Saved Content &amp; Third-Party Links</h2>
+    <p>Stash lets you save links to posts and web pages owned by others. That content belongs to its owners; Stash shows previews and copies of text so you can find and use your own saves. Auto-sorting, descriptions and extracted recipes are generated automatically and may be incomplete or inaccurate, so check the original before relying on them, especially for ingredients, allergens or instructions. We are not responsible for third-party content or websites.</p>
+  </section>
+
+  <section id="purchases">
+    <h2><span class="num">06</span> Purchases &amp; Subscriptions</h2>
+    <p>Stash is free to download with 10 free saves. Stash Pro is an optional auto-renewing subscription that unlocks unlimited saves. Purchases are processed by Apple through your App Store account, and subscription status is managed with RevenueCat.</p>
+    <h3>Auto-renewing subscriptions</h3>
+    <ul>
+      <li>Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period.</li>
+      <li>Your App Store account is charged for renewal within 24 hours before the period ends, at the price shown when you subscribed.</li>
+      <li>You can manage or cancel your subscription anytime in your device&rsquo;s App Store account settings.</li>
+      <li>Any unused portion of a free trial is forfeited when you purchase a subscription, where applicable.</li>
+    </ul>
+    <p>Except where required by law or Apple&rsquo;s policies, payments are non-refundable. Refund requests for App Store purchases are handled by Apple.</p>
+  </section>
+
+  <section id="thirdparty">
+    <h2><span class="num">07</span> Third-Party Services</h2>
+    <p>Stash relies on third-party services, including Apple, Supabase, Anthropic and RevenueCat. Your use of these services may be subject to their own terms and policies. We are not responsible for the practices, content or availability of third-party services.</p>
+  </section>
+
+  <section id="ip">
+    <h2><span class="num">08</span> Intellectual Property</h2>
+    <p>The App, including its design, text, graphics, logos and software, is owned by Russell Bergman or its licensors and is protected by intellectual property laws. We grant you a limited, non-exclusive, non-transferable, revocable license to use Stash for your personal, non-commercial use, subject to these Terms.</p>
+  </section>
+
+  <section id="disclaimers">
+    <h2><span class="num">09</span> Disclaimers</h2>
+    <p>The App is provided &ldquo;as is&rdquo; and &ldquo;as available&rdquo; without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose and non-infringement. We do not warrant that the App will be uninterrupted, secure or error-free, or that any content is accurate or reliable.</p>
+  </section>
+
+  <section id="liability">
+    <h2><span class="num">10</span> Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, Russell Bergman will not be liable for any indirect, incidental, special, consequential or punitive damages, or any loss of profits, data or goodwill, arising from your use of or inability to use the App. Our total liability for any claim relating to the App will not exceed the amount you paid us, if any, in the twelve months before the claim arose.</p>
+  </section>
+
+  <section id="termination">
+    <h2><span class="num">11</span> Termination</h2>
+    <p>We may suspend or end your access to Stash if you violate these Terms or if we discontinue the App. You may stop using the App at any time. Provisions that by their nature should survive termination, such as intellectual property, disclaimers and limitation of liability, will continue to apply.</p>
+  </section>
+
+  <section id="changes">
+    <h2><span class="num">12</span> Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will revise the date above and, where appropriate, notify you in the App. Continuing to use Stash after changes take effect means you accept the updated Terms.</p>
+  </section>
+
+  <section id="law">
+    <h2><span class="num">13</span> Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Florida, United States, without regard to its conflict-of-laws rules, unless otherwise required by applicable law.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">14</span> Contact Us</h2>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a></li>
+      <li><strong>Developer:</strong> Russell Bergman</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="wordmark-sm"><span class="dot"></span>Stash</span>
+    <p>&copy; 2026 Russell Bergman. All rights reserved.</p>
+    <p class="links"><a href="./index.html">Privacy Policy</a> &middot; <a href="./support.html">Support</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

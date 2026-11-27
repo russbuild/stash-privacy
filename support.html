@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stash Support</title>
+<meta name="description" content="Help with Stash: saving, auto-sorting, Stash Pro, subscriptions and contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F0E8;
+    --surface:#FFFFFF;
+    --ink:#1F2A2A;
+    --ink-soft:#47524F;
+    --muted:#6E665C;
+    --accent:#2F6566;
+    --accent-deep:#234D4E;
+    --line:#E2DBCD;
+    --fill:#EAF1EF;
+    --maxw:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--ink);
+    color:#fff;
+    padding:54px 24px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:4px;
+    background:linear-gradient(90deg,#E3B873 0%,#B5543A 100%);
+  }
+  .header-inner{ max-width:var(--maxw); margin:0 auto; }
+  header .wordmark{ color:#F7F0E1; }
+  .wordmark{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:34px;
+    letter-spacing:-0.01em;
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    margin:0;
+  }
+  .dot{
+    width:13px; height:13px; border-radius:50%;
+    background:#E3B873;
+    display:inline-block;
+    flex:none;
+  }
+  .header-inner h1{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:400;
+    font-size:clamp(28px,6vw,40px);
+    line-height:1.15;
+    letter-spacing:-0.02em;
+    margin:26px 0 10px;
+  }
+  .updated{
+    color:rgba(255,255,255,0.62);
+    font-size:14px;
+    letter-spacing:0.02em;
+    margin:0;
+  }
+
+  /* ---------- Layout ---------- */
+  main{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:28px 30px;
+    margin-top:-28px;
+    position:relative;
+    box-shadow:0 8px 30px rgba(31,42,42,0.06);
+  }
+
+  .intro{ color:var(--ink-soft); margin:0; }
+  .intro strong{ color:var(--ink); }
+
+  /* ---------- Table of contents ---------- */
+  nav.toc{
+    margin-top:38px;
+    padding:22px 26px;
+    background:var(--fill);
+    border:1px solid #D3E3E0;
+    border-radius:14px;
+  }
+  nav.toc h2{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:12px;
+    font-weight:600;
+    color:var(--accent-deep);
+    margin:0 0 14px;
+  }
+  nav.toc ol{
+    margin:0; padding:0;
+    list-style:none;
+    counter-reset:toc;
+    columns:2;
+    column-gap:30px;
+  }
+  nav.toc li{
+    counter-increment:toc;
+    margin:0 0 8px;
+    break-inside:avoid;
+  }
+  nav.toc a{
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-size:15px;
+    display:flex;
+    gap:9px;
+  }
+  nav.toc a::before{
+    content:counter(toc,decimal-leading-zero);
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+    font-weight:600;
+    flex:none;
+  }
+  nav.toc a:hover{ color:var(--accent-deep); }
+
+  /* ---------- Sections ---------- */
+  section{
+    margin-top:46px;
+    scroll-margin-top:24px;
+  }
+  section h2{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:24px;
+    letter-spacing:-0.01em;
+    margin:0 0 4px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+  }
+  section h2 .num{
+    font-family:'Inter',sans-serif;
+    font-size:13px;
+    font-weight:600;
+    color:var(--accent);
+    font-variant-numeric:tabular-nums;
+  }
+  section h3{
+    font-size:17px;
+    font-weight:600;
+    margin:26px 0 6px;
+    color:var(--ink);
+  }
+  p{ margin:14px 0; color:var(--ink-soft); }
+  ul{ margin:14px 0; padding-left:4px; list-style:none; }
+  ul li{
+    position:relative;
+    padding-left:22px;
+    margin:9px 0;
+    color:var(--ink-soft);
+  }
+  ul li::before{
+    content:"";
+    position:absolute;
+    left:2px; top:11px;
+    width:6px; height:6px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  strong{ color:var(--ink); font-weight:600; }
+  a{ color:var(--accent-deep); }
+
+  /* placeholders to fill in */
+  .fill{
+    background:var(--fill);
+    border-bottom:2px solid var(--accent);
+    padding:0 4px;
+    border-radius:3px;
+    font-weight:500;
+    color:var(--accent-deep);
+    white-space:nowrap;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--surface);
+    padding:40px 24px;
+    text-align:center;
+  }
+  .footer-inner{ max-width:var(--maxw); margin:0 auto; }
+  footer .wordmark-sm{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+  }
+  footer .dot{ width:9px; height:9px; }
+  footer p{ font-size:14px; color:var(--muted); margin:14px 0 0; }
+  footer .links{ margin-top:6px; }
+  footer .links a{ color:var(--accent-deep); text-decoration:none; font-size:14px; }
+  footer .links a:hover{ text-decoration:underline; }
+
+  @media (max-width:560px){
+    body{ font-size:16px; }
+    .card{ padding:24px 20px; }
+    nav.toc ol{ columns:1; }
+    header{ padding:42px 22px 40px; }
+  }
+
+  @media print{
+    header{ background:#fff; color:#000; }
+    .updated{ color:#555; }
+    header::after{ display:none; }
+    .card{ box-shadow:none; border:none; margin-top:24px; }
+    nav.toc{ display:none; }
+    a{ color:#000; text-decoration:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <p class="wordmark"><span class="dot"></span>Stash</p>
+    <h1>Support</h1>
+    <p class="updated">We usually reply within 2 business days.</p>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <p class="intro">Need help with <strong>Stash</strong>? Email us at <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a> and include your iPhone model and iOS version. The answers below cover the most common questions.</p>
+  </div>
+
+  <section id="saving">
+    <h2><span class="num">01</span> How do I save something to Stash?</h2>
+    <p>In TikTok, Instagram, YouTube, Pinterest, Facebook, X or Safari, tap <strong>Share</strong>, then <strong>Stash</strong>. If you don&rsquo;t see Stash, tap <strong>More</strong> at the end of the row of apps and turn it on. You can also tap <strong>+</strong> on Stash&rsquo;s Home screen and choose <strong>Add a Link</strong>.</p>
+  </section>
+
+  <section id="signin">
+    <h2><span class="num">02</span> Why sign in?</h2>
+    <p>Signing in with Apple is optional. It turns on auto-sorting, which files each save into the right category, writes a short note about it and pulls out recipes. Without signing in, your saves stay on your iPhone and you sort them yourself.</p>
+  </section>
+
+  <section id="pro">
+    <h2><span class="num">03</span> Free saves and Stash Pro</h2>
+    <p>Your first 10 saves are free. Stash Pro unlocks unlimited saves, with a weekly or yearly plan. Prices are shown in the app before you buy.</p>
+  </section>
+
+  <section id="restore">
+    <h2><span class="num">04</span> Restore a purchase on a new device</h2>
+    <p>Sign in to the App Store with the same Apple Account you subscribed with, then open Stash&rsquo;s <strong>Settings &rsaquo; Stash Pro &rsaquo; Restore Purchases</strong>.</p>
+  </section>
+
+  <section id="cancel">
+    <h2><span class="num">05</span> Cancel your subscription or get a refund</h2>
+    <p>Subscriptions are managed by Apple. On your iPhone, open <strong>Settings</strong>, tap your name, then <strong>Subscriptions</strong>, choose Stash and tap <strong>Cancel Subscription</strong>. Cancel at least 24 hours before the renewal date to avoid the next charge. To request a refund, visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+  </section>
+
+  <section id="delete">
+    <h2><span class="num">06</span> Delete your account</h2>
+    <p>Open <strong>Settings &rsaquo; Account &rsaquo; Delete Account</strong>. This permanently deletes your account and everything stored on our server. It doesn&rsquo;t cancel a subscription, so cancel that first if you no longer want it.</p>
+  </section>
+
+  <section id="data">
+    <h2><span class="num">07</span> Your data</h2>
+    <p>Saves are stored on your iPhone. If you sign in, saves are also sent to our server so they can be sorted. See our <a href="./index.html">Privacy Policy</a> for details.</p>
+  </section>
+
+  <section id="contact">
+    <h2><span class="num">08</span> Contact us</h2>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:phvzed@gmail.com?subject=Stash%20support">phvzed@gmail.com</a></li>
+      <li><strong>Developer:</strong> Russell Bergman</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="wordmark-sm"><span class="dot"></span>Stash</span>
+    <p>&copy; 2026 Russell Bergman. All rights reserved.</p>
+    <p class="links"><a href="./index.html">Privacy Policy</a> &middot; <a href="./terms.html">Terms of Use</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
